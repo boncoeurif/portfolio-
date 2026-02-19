@@ -53,7 +53,7 @@ const skillCategories = ref([
       { name: 'Node.js', icon: node, description: 'A JavaScript runtime built on Chrome\'s V8 JavaScript engine.' },
       { name: 'Express', icon: express, description: 'A minimal and flexible Node.js web application framework.' },
       { name: 'MongoDB', icon: mongo, description: 'A cross-platform document-oriented database program.' },
-      { name: 'Mysql', icon: MYSQL, description: 'An open-source relational database management system.' },
+      { name: 'MYSQL', icon: MYSQL, description: 'An open-source relational database management system.' },
       { name: 'SQL', icon: sql, description: 'A domain-specific language used in programming and designed for managing data held in a relational database management system.' }
     ]
   },
