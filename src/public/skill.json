@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Frontend Development",
+    "items": [
+      { "name": "HTML", "level": 90, "icon": "fab fa-html5", "description": "Markup language for structuring web pages" },
+      { "name": "CSS", "level": 85, "icon": "fab fa-css3-alt", "description": "Styling and layout for web pages" },
+      { "name": "Vue.js", "level": 75, "icon": "fab fa-vuejs", "description": "Progressive JavaScript framework for building UIs" }
+    ]
+  },
+  {
+    "name": "Backend Development",
+    "items": [
+      { "name": "Node.js", "level": 70, "icon": "fab fa-node", "description": "JavaScript runtime for server-side applications" },
+      { "name": "Express", "level": 65, "icon": "fas fa-server", "description": "Web framework for Node.js" },
+      { "name": "Databases (SQL/NoSQL)", "level": 60, "icon": "fas fa-database", "description": "Managing relational and non-relational databases" }
+    ]
+  },
+  {
+    "name": "Other Skills",
+    "items": [
+      { "name": "Networking", "level": 50, "icon": "fas fa-network-wired", "description": "Understanding of computer networks and protocols" },
+      { "name": "Git & Version Control", "level": 80, "icon": "fab fa-git-alt", "description": "Source code management with Git" }
+    ]
+  }
+]
