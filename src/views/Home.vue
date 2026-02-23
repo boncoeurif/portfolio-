@@ -102,7 +102,7 @@ const timeline = ref([
 ])
 
 const typingText = ref('')
-const roles = ['Full Stack Developer', 'UI/UX Designer', 'Problem Solver','Window server configration','Logo Creator']
+const roles = ['Full Stack Developer', 'UI/UX Designer', 'Problem Solver','Windows Server configuration','Logo Creator']
 let roleIndex = 0
 let charIndex = 0
 let isDeleting = false

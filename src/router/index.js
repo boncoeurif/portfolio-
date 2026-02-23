@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home.vue'
-import Skill from '@/views/skill.vue'
-import Projects from '@/views/ProjectS.vue'
+import Skill from '@/views/Skill.vue'
+import Projects from '@/views/Projects.vue'
 import Contact from '@/views/Contact.vue'
 import Blog from '@/views/Blog.vue' // New import
 import BlogPost from '@/views/BlogPost.vue' // New import
+import NotFound from '@/views/NotFound.vue' // Added import
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
@@ -12,7 +13,8 @@ const routes = [
   { path: '/projects', name: 'Projects', component: Projects },
   { path: '/contact', name: 'Contact', component: Contact },
   { path: '/blog', name: 'Blog', component: Blog }, // New route for blog list
-  { path: '/blog/:id', name: 'BlogPost', component: BlogPost, props: true } // New dynamic route for individual posts
+  { path: '/blog/:id', name: 'BlogPost', component: BlogPost, props: true }, // New dynamic route for individual posts
+  { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound } // Catch-all route for 404
 ]
 
 const router = createRouter({
