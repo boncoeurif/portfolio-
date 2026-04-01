@@ -263,8 +263,7 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 0 1rem;
 }
 
 /* Theme Toggle Switch */

@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-info">
-        <h3>Achille</h3>
+        <h3>Boncoeur</h3>
         <p>Full Stack Developer • Building digital experiences.</p>
         <p class="copyright">&copy; {{ new Date().getFullYear() }} All Rights Reserved.</p>
       </div>
@@ -48,6 +48,21 @@ import facebook from '@/assets/facebook.png'
   align-items: center;
   flex-wrap: wrap;
   gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-links {
+    margin-top: 1rem;
+  }
+  
+  .social-link {
+    margin: 0 0.75rem;
+  }
 }
 
 .footer-info h3 {

@@ -409,13 +409,13 @@ onMounted(() => {
   position: relative;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column-reverse;
     text-align: center;
     min-height: auto;
     padding-top: 2rem;
+    gap: 1rem;
   }
 
   .hero-text {
@@ -430,7 +430,16 @@ onMounted(() => {
   }
 
   .hero-text h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+  }
+  
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
+  
+  .icon {
+    height: 250px;
+    width: 250px;
   }
 }
 
@@ -460,10 +469,11 @@ onMounted(() => {
   }
 }
 .icon {
-    font-size: 2rem;
-    height: 34rem;
-    width: 50rem;
-    border-radius: 47%;
+    height: 350px;
+    width: 350px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
     background-color: white;
 }
 </style>
