@@ -1,4 +1,4 @@
-<template>
+<template> 
   <div class="home-container">
     <section class="hero">
       <div class="hero-text">
