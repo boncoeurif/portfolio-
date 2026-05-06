@@ -273,6 +273,7 @@ onMounted(() => {
   justify-content: center;
   align-items: center;
   position: relative;
+  z-index: 1;
 }
 
 .portrait-wrapper {
@@ -286,55 +287,59 @@ onMounted(() => {
 
 .portrait-glow {
   position: absolute;
-  width: 120%;
-  height: 120%;
+  width: 100%;
+  height: 100%;
   background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
-  opacity: 0.2;
+  opacity: 0.3;
   filter: blur(40px);
   animation: pulse 4s ease-in-out infinite;
+  z-index: 1;
 }
 
 .portrait-frame {
   position: relative;
   width: 350px;
   height: 350px;
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-  padding: 5px;
+  padding: 6px;
   animation: morph 8s ease-in-out infinite;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
   z-index: 2;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .portrait-img {
-  width: 100%;
-  height: 100%;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
   object-fit: cover;
   border-radius: inherit;
-  background-color: white;
   transition: transform 0.5s ease;
+  background: var(--bg-color); /* Fallback background */
 }
 
 .portrait-frame:hover .portrait-img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 /* Floating Badges */
 .floating-badge {
   position: absolute;
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 65px;
   background: var(--glass-bg);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--glass-border);
-  border-radius: 16px;
+  border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 12px;
   box-shadow: var(--card-shadow);
-  z-index: 3;
+  z-index: 10;
   animation: float 4s ease-in-out infinite;
 }
 
@@ -344,24 +349,33 @@ onMounted(() => {
   object-fit: contain;
 }
 
-.vue-badge { top: 10%; right: -5%; animation-delay: 0s; }
-.js-badge { bottom: 20%; left: -10%; animation-delay: 1s; }
-.node-badge { top: 40%; right: -15%; animation-delay: 2s; }
+.vue-badge { top: 5%; right: -5%; animation-delay: 0s; }
+.js-badge { bottom: 15%; left: -10%; animation-delay: 1s; }
+.node-badge { top: 45%; right: -15%; animation-delay: 2s; }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 0.2; }
-  50% { transform: scale(1.1); opacity: 0.3; }
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.15); opacity: 0.4; }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
 }
 
 @keyframes morph {
   0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
   50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
   100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8) translateY(30px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 /* Services & Cards */
