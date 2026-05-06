@@ -294,6 +294,7 @@ onMounted(() => {
   filter: blur(40px);
   animation: pulse 4s ease-in-out infinite;
   z-index: 1;
+  border-radius: 40px;
 }
 
 .portrait-frame {
@@ -302,26 +303,27 @@ onMounted(() => {
   height: 350px;
   background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
   padding: 6px;
-  animation: morph 8s ease-in-out infinite;
+  border-radius: 24px; /* Premium Rounded Square */
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
   z-index: 2;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.portrait-frame:hover {
+  transform: translateY(-10px) rotate(1deg);
 }
 
 .portrait-img {
-  width: calc(100% + 2px);
-  height: calc(100% + 2px);
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: inherit;
+  border-radius: 20px; /* Slightly smaller to fit inside frame */
   transition: transform 0.5s ease;
-  background: var(--bg-color); /* Fallback background */
-}
-
-.portrait-frame:hover .portrait-img {
-  transform: scale(1.08);
+  background: var(--bg-color);
 }
 
 /* Floating Badges */
