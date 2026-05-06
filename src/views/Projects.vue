@@ -135,170 +135,171 @@ const setActiveFilter = (filter) => {
 
 /* Search Bar */
 .search-bar {
-    text-align: center;
-    margin-bottom: 2rem;
-    padding: 0 1rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 0 1rem;
 }
 
 .search-input {
-    width: 100%;
-    max-width: 500px;
-    padding: 0.8rem 1.2rem;
-    border-radius: 25px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background: var(--bg-color);
-    color: var(--text-color);
-    font-family: inherit;
-    font-size: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-[data-theme="dark"] .search-input {
-    border-color: rgba(255, 255, 255, 0.2);
-    background: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 600px;
+  padding: 1.2rem 2rem;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--card-shadow);
 }
 
 .search-input:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(66, 185, 131, 0.2);
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(0, 210, 255, 0.2);
+  transform: translateY(-2px);
 }
-
 
 /* Filter Buttons */
 .filter-buttons {
-    text-align: center;
-    margin-bottom: 2.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
 }
 
 .filter-btn {
-    background: var(--bg-color);
-    color: var(--text-color);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 0.75rem 1.5rem;
-    border-radius: 25px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-[data-theme="dark"] .filter-btn {
-    border-color: rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.05);
+  background: var(--glass-bg);
+  color: var(--text-color);
+  border: 1px solid var(--glass-border);
+  padding: 0.8rem 1.8rem;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-btn:hover {
-    background-color: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
+  background: var(--glass-border);
+  transform: translateY(-3px);
+  border-color: var(--primary-color);
 }
 
 .filter-btn.active {
-    background-color: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
-    box-shadow: 0 4px 10px rgba(66, 185, 131, 0.3);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 10px 20px -5px rgba(0, 210, 255, 0.4);
 }
 
-
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
 }
 
 .project-card {
-    background: var(--bg-color);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-[data-theme="dark"] .project-card {
-    border-color: rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.05);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--card-shadow);
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transform: translateY(-15px) scale(1.02);
+  border-color: var(--primary-color);
 }
 
 .project-image {
-    height: 200px;
-    background: linear-gradient(45deg, var(--primary-color), #2c3e50);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 240px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(0, 210, 255, 0.1), rgba(58, 123, 213, 0.1));
 }
 
-.placeholder-image {
-    font-size: 5rem;
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .image {
+  transform: scale(1.1);
 }
 
 .project-content {
-    padding: 1.5rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+  padding: 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-content h3 {
-    margin: 0 0 0.5rem 0;
-    color: skyblue;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  font-weight: 700;
 }
 
 .project-content p {
-    margin-bottom: 1.5rem;
-    opacity: 0.8;
-    flex: 1;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  flex: 1;
 }
 
 .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
 }
 
 .tag {
-    background: rgba(66, 185, 131, 0.1);
-    color: var(--primary-color);
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 500;
+  background: rgba(0, 210, 255, 0.1);
+  color: var(--primary-color);
+  padding: 0.4rem 1rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: 1px solid rgba(0, 210, 255, 0.2);
 }
 
 .links {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--glass-border);
 }
 
 .btn-link {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: color 0.2s;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
 }
 
 .btn-link:hover {
-    color: var(--primary-color);
-}
-.image{
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    object-position: center;
-    color: #fff;
-    border-radius: 10px;
+  color: var(--primary-color);
+  transform: translateX(5px);
 }
 </style>

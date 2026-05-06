@@ -64,61 +64,74 @@ const blogPosts = ref([
 
 .blog-posts-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
 }
 
 .blog-card {
-    background: var(--bg-color);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 16px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     flex-direction: column;
-}
-
-[data-theme="dark"] .blog-card {
-    border-color: rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.05);
+    box-shadow: var(--card-shadow);
 }
 
 .blog-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-12px);
+    border-color: var(--primary-color);
+    background: var(--glass-border);
 }
 
 .blog-link {
     text-decoration: none;
     color: inherit;
-    padding: 1.5rem;
+    padding: 2.5rem;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
 .blog-header h3 {
-    margin: 0 0 0.5rem 0;
-    color: skyblue;
-    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+    color: var(--primary-color);
+    font-size: 1.75rem;
+    font-weight: 800;
 }
 
 .blog-meta {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    font-weight: 600;
     color: var(--text-color);
     opacity: 0.7;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .blog-excerpt {
     flex-grow: 1;
-    margin-bottom: 1rem;
-    line-height: 1.6;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    opacity: 0.9;
 }
 
 .read-more {
     color: var(--primary-color);
-    font-weight: 600;
+    font-weight: 800;
     align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover .read-more {
+    transform: translateX(8px);
 }
 </style>

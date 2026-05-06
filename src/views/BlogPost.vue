@@ -80,34 +80,33 @@ watchEffect(() => {
 }
 
 .post-content-card {
-    background: var(--bg-color);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 16px;
-    padding: 2.5rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-}
-
-[data-theme="dark"] .post-content-card {
-    border-color: rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 32px;
+    padding: 4rem;
+    box-shadow: var(--card-shadow);
 }
 
 .post-title {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
     color: var(--text-color);
+    font-weight: 800;
+    line-height: 1.1;
 }
 
 .post-meta {
-    font-size: 1rem;
-    color: var(--text-color);
-    opacity: 0.7;
-    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
 }
 
 .post-body {
     line-height: 1.8;
     color: var(--text-color);
+    font-size: 1.15rem;
 }
 
 .post-body p {

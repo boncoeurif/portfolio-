@@ -84,67 +84,86 @@ const skillCategories = ref([
 }
 
 .skills-category {
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
 }
 
 .category-title {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  color: skyblue;
-  border-left: 4px solid skyblue;
-  padding-left: 1rem;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 140px), 1fr));
-  gap: 1.5rem;
-}
-
-.skill-item {
-  background: var(--bg-color);
-  border: 1px solid rgba(0,0,0,0.1);
-  padding: 1.5rem;
-  border-radius: 12px;
-  text-align: center;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  font-size: 1.8rem;
+  margin-bottom: 2.5rem;
+  color: var(--text-color);
+  font-weight: 800;
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 1rem;
 }
 
-[data-theme="dark"] .skill-item {
-  border-color: rgba(255,255,255,0.1);
-  background: rgba(255,255,255,0.05);
+.category-title::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, var(--primary-color), transparent);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.skill-item {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  padding: 2.5rem 1.5rem;
+  border-radius: 24px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: var(--card-shadow);
 }
 
 .skill-item:hover {
-  transform: translateY(-5px);
+  transform: translateY(-12px);
   border-color: var(--primary-color);
+  background: var(--glass-border);
 }
 
 .skill-icon {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.skill-item:hover .skill-icon {
+  transform: scale(1.1) rotate(5deg);
 }
 
 .skill-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
 }
 
 .skill-name {
-  font-weight: 600;
+  font-weight: 800;
+  font-size: 1.2rem;
   color: var(--text-color);
 }
 
 .skill-description {
-  font-size: 0.9rem;
-  color: var(--text-color-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.8;
+  color: var(--text-color);
 }
 </style>

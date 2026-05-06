@@ -123,104 +123,114 @@ const submitForm = () => {
 .info-item {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 1.5rem;
-    background: var(--bg-color);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-}
-
-[data-theme="dark"] .info-item {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.05);
+    gap: 1.5rem;
+    padding: 2rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .info-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+    background: var(--glass-border);
 }
 
 .icon {
-    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 210, 255, 0.1);
+    border-radius: 12px;
 }
 
+.icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
 
 .info-item h3 {
-    margin: 0 0 0.25rem 0;
-    font-size: 1.1rem;
-    color: skyblue;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--primary-color);
 }
 
 .info-item p {
     margin: 0;
-    opacity: 0.8;
+    font-weight: 600;
+    opacity: 0.9;
 }
 
 /* Form Styles */
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    background: var(--bg-color);
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-}
-
-[data-theme="dark"] .contact-form {
-    background: rgba(255, 255, 255, 0.05);
+    gap: 2rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    padding: 3rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 32px;
+    box-shadow: var(--card-shadow);
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.75rem;
 }
 
 label {
-    font-weight: 500;
+    font-weight: 700;
+    font-size: 0.95rem;
     margin-left: 0.5rem;
+    opacity: 0.8;
 }
 
 input,
 textarea {
-    padding: 1rem;
-    border-radius: 8px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background: var(--bg-color);
+    padding: 1.2rem;
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.05);
     color: var(--text-color);
     font-family: inherit;
-    transition: border-color 0.3s ease;
-}
-
-[data-theme="dark"] input,
-[data-theme="dark"] textarea {
-    border-color: rgba(255, 255, 255, 0.2);
-    background: rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
 input:focus,
 textarea:focus {
     outline: none;
     border-color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 4px rgba(0, 210, 255, 0.1);
 }
 
 .btn-submit {
-    background: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     border: none;
-    padding: 1rem;
-    border-radius: 8px;
-    font-weight: 600;
+    padding: 1.2rem;
+    border-radius: 16px;
+    font-weight: 800;
+    font-size: 1.1rem;
     cursor: pointer;
-    transition: opacity 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 20px -5px rgba(0, 210, 255, 0.4);
     margin-top: 1rem;
 }
 
 .btn-submit:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px -5px rgba(0, 210, 255, 0.6);
 }
 
 @media (max-width: 768px) {

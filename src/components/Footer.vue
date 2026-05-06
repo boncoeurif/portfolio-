@@ -28,15 +28,11 @@ import facebook from '@/assets/facebook.png'
 <style scoped>
 
 .footer {
-  background-color: var(--nav-bg);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 3rem 0;
-  margin-top: auto; /* Pushes footer to bottom */
-}
-
-[data-theme="dark"] .footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--glass-border);
+  padding: 4rem 0;
+  margin-top: auto;
 }
 
 .footer-container {
@@ -47,45 +43,58 @@ import facebook from '@/assets/facebook.png'
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .footer-links {
-    margin-top: 1rem;
-  }
-  
-  .social-link {
-    margin: 0 0.75rem;
-  }
+  gap: 2rem;
 }
 
 .footer-info h3 {
   color: var(--primary-color);
+  font-size: 1.8rem;
+  font-weight: 800;
   margin: 0 0 0.5rem 0;
 }
 
-.social-link {
-  margin-left: 1.5rem;
-  color: var(--text-color);
-  text-decoration: none;
+.footer-info p {
+  opacity: 0.8;
   font-weight: 500;
-  transition: color 0.3s ease;
+}
+
+.copyright {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  opacity: 0.6;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover {
-  color: var(--primary-color);
+  transform: translateY(-5px);
+  background: var(--primary-color);
+  border-color: var(--primary-color);
 }
+
 .icon {
-    font-size: 2rem;
-    height: 1.5rem;
-    width: 1.5rem;
-    border-radius: 50%;
-    background-color: white;
+    height: 22px;
+    width: 22px;
+    object-fit: contain;
+    transition: filter 0.3s ease;
+}
+
+.social-link:hover .icon {
+  filter: brightness(0) invert(1);
 }
 </style>
