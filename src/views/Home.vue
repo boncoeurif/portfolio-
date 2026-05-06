@@ -111,10 +111,11 @@ const testimonials = ref([
 ])
 
 const timeline = ref([
-  { year: '2022', title: 'Started Web Development', description: 'Built first projects with Vue.js and Node.js.' },
-  { year: '2023', title: 'ICT Systems Design', description: 'Worked on backend and networking solutions.' },
+  { year: '2026', title: 'Co-Founder & Lead Developer - Invoxa', description: 'Architecting a professional SaaS invoicing platform with dynamic calculations, PDF generation, and real-time analytics.' },
+  { year: '2025', title: 'Collaborative Learning', description: 'Created cheat sheets and study guides for peers.' },
   { year: '2024', title: 'Portfolio Upgrade', description: 'Added animations, theme toggle, and persistent settings.' },
-  { year: '2025', title: 'Collaborative Learning', description: 'Created cheat sheets and study guides for peers.' }
+  { year: '2023', title: 'ICT Systems Design', description: 'Worked on backend and networking solutions.' },
+  { year: '2022', title: 'Started Web Development', description: 'Built first projects with Vue.js and Node.js.' }
 ])
 
 const typingText = ref('')

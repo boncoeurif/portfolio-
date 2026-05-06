@@ -55,6 +55,15 @@ import weather from '@/assets/weather.png'
 
 const projects = ref([
     {
+        id: 0,
+        title: 'Invoxa Invoicing SaaS',
+        description: 'A premium SaaS platform for professional invoicing, featuring automated PDF exports and live financial analytics.',
+        tags: ['Vue.js', 'SaaS', 'FinTech', 'PDF Engine'],
+        demo: 'https://invoxa-rw.vercel.app',
+        image: shop, // Using shop as placeholder or I could leave it blank if no image
+        github: '#'
+    },
+    {
         id: 1,
         title: 'E-Commerce Platform',
         description: 'A full-featured online store with cart and checkout functionality.',
