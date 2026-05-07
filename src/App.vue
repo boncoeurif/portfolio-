@@ -8,17 +8,16 @@
     <!-- Navigation -->
     <nav class="navbar">
       <div class="nav-container">
-        <!-- Mobile Menu Button -->
-        <button class="menu-toggle" :class="{ 'active': isMenuOpen }" @click="toggleMenu" aria-label="Toggle menu">
-          <span class="hamburger"></span>
-        </button>
+        <div class="logo-container">
+          <router-link to="/" class="logo">IFB<span>.</span></router-link>
+        </div>
 
-        <div class="nav-links" :class="{ 'active': isMenuOpen }">
-          <router-link to="/" class="nav-item" @click="closeMenu">Home</router-link>
-          <router-link to="/skill" class="nav-item" @click="closeMenu">Skills</router-link>
-          <router-link to="/projects" class="nav-item" @click="closeMenu">Projects</router-link>
-          <router-link to="/blog" class="nav-item" @click="closeMenu">Blog</router-link>
-          <router-link to="/contact" class="nav-item" @click="closeMenu">Contact</router-link>
+        <div class="nav-links desktop-only">
+          <router-link to="/" class="nav-item">Home</router-link>
+          <router-link to="/skill" class="nav-item">Skills</router-link>
+          <router-link to="/projects" class="nav-item">Projects</router-link>
+          <router-link to="/blog" class="nav-item">Blog</router-link>
+          <router-link to="/contact" class="nav-item">Contact</router-link>
         </div>
 
         <!-- Theme Toggle -->
@@ -27,6 +26,30 @@
           <span class="slider round"></span>
         </label>
       </div>
+    </nav>
+
+    <!-- Bottom Navigation for Mobile -->
+    <nav class="bottom-nav mobile-only">
+      <router-link to="/" class="bottom-nav-item">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        <span>Home</span>
+      </router-link>
+      <router-link to="/skill" class="bottom-nav-item">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M21 16.5C21 16.88 20.79 17.21 20.47 17.38L12.57 21.82C12.41 21.94 12.21 22 12 22C11.79 22 11.59 21.94 11.43 21.82L3.53 17.38C3.21 17.21 3 16.88 3 16.5V7.5C3 7.12 3.21 6.79 3.53 6.62L11.43 2.18C11.59 2.06 11.79 2 12 2C12.21 2 12.41 2.06 12.57 2.18L20.47 6.62C20.79 6.79 21 7.12 21 7.5V16.5Z"/></svg>
+        <span>Skills</span>
+      </router-link>
+      <router-link to="/projects" class="bottom-nav-item">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
+        <span>Projects</span>
+      </router-link>
+      <router-link to="/blog" class="bottom-nav-item">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-5 14H7v-2h8v2zm3-4H7v-2h11v2zm0-4H7V6h11v2z"/></svg>
+        <span>Blog</span>
+      </router-link>
+      <router-link to="/contact" class="bottom-nav-item">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        <span>Contact</span>
+      </router-link>
     </nav>
 
     <!-- Router View -->
@@ -57,7 +80,6 @@ import Footer from '@/components/Footer.vue'
 
 const showButton = ref(false)
 const theme = ref('dark') // default theme
-const isMenuOpen = ref(false)
 const isLoading = ref(false)
 const router = useRouter()
 
@@ -71,9 +93,6 @@ router.afterEach(() => {
     isLoading.value = false
   }, 500)
 })
-
-const toggleMenu = () => isMenuOpen.value = !isMenuOpen.value
-const closeMenu = () => isMenuOpen.value = false
 
 const handleScroll = () => {
   showButton.value = window.scrollY > 200
@@ -183,62 +202,29 @@ body {
   align-items: center;
 }
 
+.logo-container .logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--text-color);
+  letter-spacing: -1px;
+}
+
+.logo-container .logo span {
+  color: var(--primary-color);
+}
+
 .nav-links {
   display: flex;
   gap: 2rem;
 }
 
-/* Mobile Menu Button */
-.menu-toggle {
+.desktop-only {
+  display: flex;
+}
+
+.mobile-only {
   display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  z-index: 1001;
-}
-
-.hamburger {
-  display: block;
-  width: 25px;
-  height: 2px;
-  background-color: var(--text-color);
-  position: relative;
-  transition: background-color 0.3s;
-}
-
-.hamburger::before,
-.hamburger::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: var(--text-color);
-  left: 0;
-  transition: transform 0.3s, top 0.3s;
-}
-
-.hamburger::before {
-  top: -8px;
-}
-
-.hamburger::after {
-  top: 8px;
-}
-
-/* Hamburger Animation */
-.menu-toggle.active .hamburger {
-  background-color: transparent;
-}
-
-.menu-toggle.active .hamburger::before {
-  transform: rotate(45deg);
-  top: 0;
-}
-
-.menu-toggle.active .hamburger::after {
-  transform: rotate(-45deg);
-  top: 0;
 }
 
 .nav-item {
@@ -271,28 +257,81 @@ body {
   color: var(--primary-color);
 }
 
+/* Bottom Navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--glass-border);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
+  padding-bottom: env(safe-area-inset-bottom);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 0.7rem;
+  font-weight: 600;
+  gap: 4px;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.bottom-nav-item svg {
+  transition: transform 0.3s ease;
+}
+
+.bottom-nav-item.router-link-active {
+  color: var(--primary-color);
+  opacity: 1;
+}
+
+.bottom-nav-item.router-link-active svg {
+  transform: translateY(-4px);
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
+  .desktop-only {
+    display: none;
   }
 
-  .nav-links {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    height: 100vh;
-    width: 80%;
-    background-color: var(--bg-color);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1);
+  .mobile-only {
+    display: flex;
   }
 
-  .nav-links.active {
-    left: 0;
+  .nav-container {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .main-content {
+    padding-bottom: 80px; /* Space for bottom nav */
+  }
+
+  /* Global typography adjustments for mobile */
+  h1 { font-size: 1.75rem !important; }
+  h2 { font-size: 1.5rem !important; }
+  h3 { font-size: 1.25rem !important; }
+  p { font-size: 0.95rem !important; }
+
+  .back-to-top {
+    bottom: 5.5rem; /* Move up to avoid bottom nav */
+    right: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
   }
 }
 

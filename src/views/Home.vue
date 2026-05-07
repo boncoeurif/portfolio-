@@ -496,35 +496,87 @@ onMounted(() => {
 }
 
 @media (max-width: 768px) {
+  .home-container {
+    gap: 3rem;
+  }
+
   .hero {
     flex-direction: column-reverse;
     text-align: center;
     min-height: auto;
-    padding-top: 2rem;
-    gap: 3rem;
+    padding-top: 1rem;
+    gap: 2rem;
   }
 
   .portrait-wrapper {
-    width: 300px;
-    height: 300px;
-  }
-
-  .portrait-frame {
     width: 260px;
     height: 260px;
   }
 
+  .portrait-frame {
+    width: 220px;
+    height: 220px;
+  }
+
   .floating-badge {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
+    padding: 8px;
   }
 
   .hero-text h1 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
   }
   
   .hero-text h2 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    min-height: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+  }
+
+  .cta-group {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    border-radius: 12px;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .card {
+    padding: 2rem 1.5rem;
+  }
+
+  .icons {
+    font-size: 2.5rem;
+  }
+
+  .timeline-section {
+    padding: 2rem 1rem;
+  }
+
+  .timeline li {
+    gap: 1.5rem;
+  }
+
+  .timeline .year {
+    min-width: 70px;
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
   }
 }
 
