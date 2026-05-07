@@ -31,7 +31,7 @@
     </nav>
 
     <!-- Bottom Navigation for Mobile -->
-    <nav v-if="$route.path !== '/'" class="bottom-nav mobile-only">
+    <nav class="bottom-nav mobile-only">
       <router-link to="/" class="bottom-nav-item">
         <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
         <span>Home</span>
@@ -270,7 +270,7 @@ body {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-top: 1px solid var(--glass-border);
-  display: flex;
+  display: none; /* Hidden by default (PC) */
   justify-content: space-around;
   align-items: center;
   z-index: 1000;
@@ -314,16 +314,16 @@ body {
     display: flex;
   }
 
+  .bottom-nav {
+    display: flex; /* Visible only on mobile */
+  }
+
   .nav-container {
     padding: 0.75rem 1.5rem;
   }
 
   .main-content {
     padding-bottom: 80px; /* Space for bottom nav */
-  }
-
-  #app:has(.home-container) .main-content {
-    padding-bottom: 0;
   }
 
   /* Global typography adjustments for mobile */
