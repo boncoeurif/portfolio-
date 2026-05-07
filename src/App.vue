@@ -8,10 +8,12 @@
     <!-- Navigation -->
     <nav class="navbar">
       <div class="nav-container">
-        <div class="logo-container">
+        <!-- Logo - Only visible on mobile top bar now -->
+        <div class="logo-container mobile-only">
           <router-link to="/" class="logo">IFB<span>.</span></router-link>
         </div>
 
+        <!-- Desktop Navigation Links (Restored to original look) -->
         <div class="nav-links desktop-only">
           <router-link to="/" class="nav-item">Home</router-link>
           <router-link to="/skill" class="nav-item">Skills</router-link>
