@@ -171,6 +171,10 @@ onMounted(() => {
   flex-direction: column;
   gap: 6rem;
   padding-bottom: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 /* Hero Section */
