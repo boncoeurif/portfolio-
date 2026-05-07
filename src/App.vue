@@ -1,9 +1,14 @@
 <template>
   <div id="app" :class="theme">
-    <!-- Loading Spinner -->
-    <div v-if="isLoading" class="loading-overlay">
-      <div class="spinner"></div>
-    </div>
+    <!-- Loading Splash Screen -->
+    <transition name="fade">
+      <div v-if="isLoading" class="loading-overlay">
+        <div class="logo-splash-container">
+          <img src="/logo-splash.png" alt="Logo" class="logo-splash-img">
+          <div class="splash-loader"></div>
+        </div>
+      </div>
+    </transition>
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -82,7 +87,7 @@ import Footer from '@/components/Footer.vue'
 
 const showButton = ref(false)
 const theme = ref('dark') // default theme
-const isLoading = ref(false)
+const isLoading = ref(true) // Start with splash screen
 const router = useRouter()
 
 router.beforeEach((to, from, next) => {
@@ -93,7 +98,7 @@ router.beforeEach((to, from, next) => {
 router.afterEach(() => {
   setTimeout(() => {
     isLoading.value = false
-  }, 500)
+  }, 1500) // Premium duration
 })
 
 const handleScroll = () => {
@@ -111,6 +116,11 @@ const toggleTheme = () => {
 }
 
 onMounted(() => {
+  // Clear initial loading splash
+  setTimeout(() => {
+    isLoading.value = false
+  }, 2000)
+
   // Load saved theme if available
   const savedTheme = localStorage.getItem('theme')
   if (savedTheme) {
@@ -417,7 +427,7 @@ body {
   opacity: 0;
 }
 
-/* Loading Spinner */
+/* Loading Splash Screen */
 .loading-overlay {
   position: fixed;
   top: 0;
@@ -431,18 +441,36 @@ body {
   z-index: 2000;
 }
 
-.spinner {
-  width: 50px;
-  height: 50px;
-  border: 5px solid rgba(0, 0, 0, 0.1);
+.logo-splash-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-splash-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(0, 210, 255, 0.3);
+  animation: pulse-logo 2s infinite ease-in-out;
+}
+
+.splash-loader {
+  margin-top: 2rem;
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(0, 210, 255, 0.1);
   border-top-color: var(--primary-color);
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
 
-[data-theme="dark"] .spinner {
-  border: 5px solid rgba(255, 255, 255, 0.1);
-  border-top-color: var(--primary-color);
+@keyframes pulse-logo {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
 }
 
 @keyframes spin {
