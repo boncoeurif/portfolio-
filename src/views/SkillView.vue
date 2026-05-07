@@ -73,6 +73,8 @@ const skillCategories = ref([
 .skills-container {
   max-width: 1000px;
   margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
   padding-bottom: 4rem;
 }
 

@@ -97,6 +97,8 @@ const submitForm = () => {
 .contact-container {
     max-width: 1000px;
     margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
     padding-bottom: 4rem;
 }
 
@@ -234,9 +236,51 @@ textarea:focus {
 }
 
 @media (max-width: 768px) {
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 2rem;
+    }
+
     .contact-content {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2rem;
+    }
+
+    .info-item {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    .icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .info-item h3 {
+        font-size: 1.1rem;
+    }
+
+    .info-item p {
+        font-size: 0.9rem;
+    }
+
+    .contact-form {
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .form-group {
+        gap: 0.5rem;
+    }
+
+    input, textarea {
+        padding: 0.9rem;
+        font-size: 0.95rem;
+    }
+
+    .btn-submit {
+        padding: 1rem;
+        font-size: 1rem;
     }
 }
 </style>

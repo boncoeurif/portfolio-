@@ -52,6 +52,8 @@ const blogPosts = ref([
 .blog-container {
     max-width: 1200px;
     margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
     padding-bottom: 4rem;
 }
 
@@ -133,5 +135,40 @@ const blogPosts = ref([
 
 .blog-card:hover .read-more {
     transform: translateX(8px);
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 2rem;
+    }
+
+    .blog-posts-grid {
+        gap: 2rem;
+    }
+
+    .blog-link {
+        padding: 1.5rem;
+    }
+
+    .blog-header h3 {
+        font-size: 1.35rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .blog-meta {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+
+    .blog-excerpt {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+    }
+
+    .read-more {
+        font-size: 0.9rem;
+    }
 }
 </style>

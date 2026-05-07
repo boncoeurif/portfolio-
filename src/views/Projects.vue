@@ -132,6 +132,8 @@ const setActiveFilter = (filter) => {
 .projects-container {
     max-width: 1200px;
     margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
     padding-bottom: 4rem;
 }
 
