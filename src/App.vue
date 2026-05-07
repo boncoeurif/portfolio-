@@ -31,7 +31,7 @@
     </nav>
 
     <!-- Bottom Navigation for Mobile -->
-    <nav class="bottom-nav mobile-only">
+    <nav v-if="$route.path !== '/'" class="bottom-nav mobile-only">
       <router-link to="/" class="bottom-nav-item">
         <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
         <span>Home</span>
@@ -320,6 +320,10 @@ body {
 
   .main-content {
     padding-bottom: 80px; /* Space for bottom nav */
+  }
+
+  #app:has(.home-container) .main-content {
+    padding-bottom: 0;
   }
 
   /* Global typography adjustments for mobile */
