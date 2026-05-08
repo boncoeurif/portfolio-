@@ -90,16 +90,8 @@ const theme = ref('dark') // default theme
 const isLoading = ref(true) // Start with splash screen
 const router = useRouter()
 
-router.beforeEach((to, from, next) => {
-  isLoading.value = true
-  next()
-})
-
-router.afterEach(() => {
-  setTimeout(() => {
-    isLoading.value = false
-  }, 1500) // Premium duration
-})
+// Remove router beforeEach/afterEach loading for faster, smoother transitions
+// This prevents layout jumps during navigation
 
 const handleScroll = () => {
   showButton.value = window.scrollY > 200
@@ -432,13 +424,13 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: var(--bg-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2000;
+  z-index: 3000; /* Higher than everything */
 }
 
 .logo-splash-container {
