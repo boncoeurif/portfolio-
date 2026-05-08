@@ -54,6 +54,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import emailjs from '@emailjs/browser'
 import locc from '@/assets/locc.png'
 import phone from '@/assets/phone-call.png'
 import email from '@/assets/em.png'
@@ -65,10 +66,10 @@ const form = ref({
 })
 
 const submitForm = () => {
-    // These IDs should be replaced with your actual EmailJS IDs.
-    // You can find them in your EmailJS account dashboard.
+    // These IDs are from your original implementation.
     const serviceID = 'service_50k8dgx';
     const templateID = 'template_1bwd6ql';
+    const publicKey = 'hic9ecb2SNWqo2ff8';
 
     const templateParams = {
         from_name: form.value.name,
@@ -76,7 +77,7 @@ const submitForm = () => {
         message: form.value.message,
     };
 
-    emailjs.send(serviceID, templateID, templateParams)
+    emailjs.send(serviceID, templateID, templateParams, publicKey)
         .then(() => {
             alert(`Thank you ${form.value.name}! Your message has been sent.`);
             console.log('SUCCESS!');
@@ -87,8 +88,8 @@ const submitForm = () => {
                 message: ''
             };
         }, (err) => {
-            alert(JSON.stringify(err));
-            console.log('FAILED...', err);
+            console.error('FAILED...', err);
+            alert('Sorry, there was an issue sending your message. Please try again later.');
         });
 };
 </script>
