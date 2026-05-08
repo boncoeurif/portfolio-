@@ -13,5 +13,9 @@ app.mount('#app')
 // Initialize AOS for scroll animations
 AOS.init({
   duration: 800,
-  once: true
+  once: true,
+  offset: 50,
+  disable: 'mobile', // Disable on small screens for better FPS
+  debounceDelay: 50,
+  throttleDelay: 99
 })

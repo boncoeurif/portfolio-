@@ -81,7 +81,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import Footer from '@/components/Footer.vue'
 
@@ -90,8 +90,26 @@ const theme = ref('dark') // default theme
 const isLoading = ref(true) // Start with splash screen
 const router = useRouter()
 
-// Remove router beforeEach/afterEach loading for faster, smoother transitions
-// This prevents layout jumps during navigation
+// Restore loading on every page click
+router.beforeEach((to, from, next) => {
+  isLoading.value = true
+  next()
+})
+
+router.afterEach(() => {
+  setTimeout(() => {
+    isLoading.value = false
+  }, 1000) // Balanced duration
+})
+
+// Prevent scroll jumping when loading
+watch(isLoading, (val) => {
+  if (val) {
+    document.body.style.overflow = 'hidden'
+  } else {
+    document.body.style.overflow = ''
+  }
+})
 
 const handleScroll = () => {
   showButton.value = window.scrollY > 200
@@ -328,6 +346,12 @@ body {
     padding-bottom: 80px; /* Space for bottom nav */
   }
 
+  /* Optimize blur for mobile performance */
+  .glass, .navbar, .bottom-nav, .card, .project-card, .blog-card, .info-item, .contact-form {
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+  }
+
   /* Global typography adjustments for mobile */
   h1 { font-size: 1.75rem !important; }
   h2 { font-size: 1.5rem !important; }
@@ -422,15 +446,14 @@ body {
 /* Loading Splash Screen */
 .loading-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  inset: 0; /* Anchors to all 4 edges perfectly */
+  width: 100%;
+  height: 100%;
   background-color: var(--bg-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 3000; /* Higher than everything */
+  z-index: 9999; /* Absolute top priority */
 }
 
 .logo-splash-container {

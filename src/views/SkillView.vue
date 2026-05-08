@@ -7,7 +7,7 @@
       <div class="skills-grid">
         <div class="skill-item" v-for="skill in category.skills" :key="skill.name">
           <div class="skill-icon">
-            <img :src="skill.icon" :alt="skill.name" class="skill-img" />
+            <img :src="skill.icon" :alt="skill.name" class="skill-img" loading="lazy" decoding="async" />
           </div>
           <span class="skill-name">{{ skill.name }}</span>
           <p class="skill-description">{{ skill.description }}</p>

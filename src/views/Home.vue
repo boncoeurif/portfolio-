@@ -20,17 +20,17 @@
         <div class="portrait-wrapper">
           <div class="portrait-glow"></div>
           <div class="portrait-frame">
-            <img :src="bon" alt="I.Fabrice Boncoeur" class="portrait-img">
+            <img :src="bon" alt="I.Fabrice Boncoeur" class="portrait-img" fetchpriority="high" decoding="async">
           </div>
           <!-- Floating decorative elements -->
           <div class="floating-badge vue-badge">
-            <img :src="vueIcon" alt="Vue.js">
+            <img :src="vueIcon" alt="Vue.js" loading="lazy" decoding="async">
           </div>
           <div class="floating-badge js-badge">
-            <img :src="jsIcon" alt="JavaScript">
+            <img :src="jsIcon" alt="JavaScript" loading="lazy" decoding="async">
           </div>
           <div class="floating-badge node-badge">
-            <img :src="nodeIcon" alt="Node.js">
+            <img :src="nodeIcon" alt="Node.js" loading="lazy" decoding="async">
           </div>
         </div>
       </div>

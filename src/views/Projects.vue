@@ -29,7 +29,7 @@
         <div class="projects-grid">
             <div class="project-card" v-for="project in filteredProjects" :key="project.id" data-aos="fade-up">
                 <div class="project-image">
-                    <img :src="project.image" :alt="project.title" class="image"/>
+                    <img :src="project.image" :alt="project.title" class="image" loading="lazy" decoding="async"/>
                 </div>
                 <div class="project-content">
                     <h3>{{ project.title }}</h3>

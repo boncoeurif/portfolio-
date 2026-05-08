@@ -1,20 +1,43 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home.vue'
-import Skill from '@/views/SkillView.vue'
-import Projects from '@/views/Projects.vue'
-import Contact from '@/views/Contact.vue'
-import Blog from '@/views/Blog.vue' // New import
-import BlogPost from '@/views/BlogPost.vue' // New import
-import NotFound from '@/views/NotFound.vue' // Added import
 
 const routes = [
-  { path: '/', name: 'Home', component: Home },
-  { path: '/skill', name: 'Skill', component: Skill },
-  { path: '/projects', name: 'Projects', component: Projects },
-  { path: '/contact', name: 'Contact', component: Contact },
-  { path: '/blog', name: 'Blog', component: Blog }, // New route for blog list
-  { path: '/blog/:id', name: 'BlogPost', component: BlogPost, props: true }, // New dynamic route for individual posts
-  { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound } // Catch-all route for 404
+  { 
+    path: '/', 
+    name: 'Home', 
+    component: Home 
+  },
+  { 
+    path: '/skill', 
+    name: 'Skill', 
+    component: () => import('@/views/SkillView.vue') 
+  },
+  { 
+    path: '/projects', 
+    name: 'Projects', 
+    component: () => import('@/views/Projects.vue') 
+  },
+  { 
+    path: '/contact', 
+    name: 'Contact', 
+    component: () => import('@/views/Contact.vue') 
+  },
+  { 
+    path: '/blog', 
+    name: 'Blog', 
+    component: () => import('@/views/Blog.vue') 
+  },
+  { 
+    path: '/blog/:id', 
+    name: 'BlogPost', 
+    component: () => import('@/views/BlogPost.vue'), 
+    props: true 
+  },
+  { 
+    path: '/:pathMatch(.*)*', 
+    name: 'NotFound', 
+    component: () => import('@/views/NotFound.vue') 
+  }
 ]
 
 const router = createRouter({
