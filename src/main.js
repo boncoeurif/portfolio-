@@ -15,7 +15,6 @@ AOS.init({
   duration: 800,
   once: true,
   offset: 50,
-  disable: 'mobile', // Disable on small screens for better FPS
   debounceDelay: 50,
   throttleDelay: 99
 })

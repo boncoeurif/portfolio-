@@ -87,10 +87,10 @@ import Footer from '@/components/Footer.vue'
 
 const showButton = ref(false)
 const theme = ref('dark') // default theme
-const isLoading = ref(true) // Start with splash screen
+const isLoading = ref(false) // Start visible to prevent blank screens
 const router = useRouter()
 
-// Restore loading on every page click
+// Show loading only during navigation
 router.beforeEach((to, from, next) => {
   isLoading.value = true
   next()
@@ -99,14 +99,14 @@ router.beforeEach((to, from, next) => {
 router.afterEach(() => {
   setTimeout(() => {
     isLoading.value = false
-  }, 1000) // Balanced duration
+  }, 800)
 })
 
 // Prevent scroll jumping when loading
 watch(isLoading, (val) => {
-  if (val) {
+  if (val && typeof document !== 'undefined') {
     document.body.style.overflow = 'hidden'
-  } else {
+  } else if (typeof document !== 'undefined') {
     document.body.style.overflow = ''
   }
 })
@@ -121,16 +121,11 @@ const scrollToTop = () => {
 
 const toggleTheme = () => {
   theme.value = theme.value === 'light' ? 'dark' : 'light'
-  localStorage.setItem('theme', theme.value) // save choice
+  localStorage.setItem('theme', theme.value)
   document.documentElement.setAttribute('data-theme', theme.value)
 }
 
 onMounted(() => {
-  // Clear initial loading splash
-  setTimeout(() => {
-    isLoading.value = false
-  }, 2000)
-
   // Load saved theme if available
   const savedTheme = localStorage.getItem('theme')
   if (savedTheme) {
