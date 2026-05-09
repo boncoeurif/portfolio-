@@ -237,51 +237,77 @@ textarea:focus {
 }
 
 @media (max-width: 768px) {
+    .contact-container {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+        padding-bottom: 2rem;
+    }
+
     .section-title {
-        font-size: 1.75rem;
-        margin-bottom: 2rem;
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
     }
 
     .contact-content {
         grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .info-item {
-        padding: 1.5rem;
-        gap: 1rem;
-    }
-
-    .icon {
-        width: 40px;
-        height: 40px;
-    }
-
-    .info-item h3 {
-        font-size: 1.1rem;
-    }
-
-    .info-item p {
-        font-size: 0.9rem;
-    }
-
-    .contact-form {
-        padding: 2rem 1.5rem;
         gap: 1.5rem;
     }
 
+    .contact-info {
+        gap: 0.75rem;
+    }
+
+    .info-item {
+        padding: 1rem 1.25rem;
+        gap: 0.75rem;
+        border-radius: 16px;
+    }
+
+    .icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+    }
+
+    .icon img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .info-item h3 {
+        font-size: 0.9rem;
+        margin-bottom: 0.1rem;
+    }
+
+    .info-item p {
+        font-size: 0.8rem;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+        gap: 1rem;
+        border-radius: 20px;
+    }
+
     .form-group {
-        gap: 0.5rem;
+        gap: 0.4rem;
+    }
+
+    label {
+        font-size: 0.85rem;
     }
 
     input, textarea {
-        padding: 0.9rem;
-        font-size: 0.95rem;
+        padding: 0.75rem;
+        font-size: 0.9rem;
+        border-radius: 12px;
     }
 
     .btn-submit {
-        padding: 1rem;
-        font-size: 1rem;
+        padding: 0.9rem;
+        font-size: 0.95rem;
+        border-radius: 12px;
+        margin-top: 0.5rem;
     }
 }
 </style>
