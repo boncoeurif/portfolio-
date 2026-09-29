@@ -188,26 +188,26 @@ onUnmounted(() => {
 }
 
 .hero-text h1 {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: clamp(1.9rem, 3.6vw, 3.1rem);
   font-weight: 800;
-  margin-bottom: 1rem;
-  line-height: 1.1;
+  margin-bottom: 0.9rem;
+  line-height: 1.15;
   letter-spacing: -0.02em;
 }
 
 .hero-text h2 {
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  font-size: clamp(1.2rem, 2.4vw, 1.9rem);
+  background: linear-gradient(to right, var(--primary-text), var(--secondary-color));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   font-weight: 700;
-  min-height: 3rem;
+  min-height: 2.4rem;
 }
 
 .hero-text p {
-  font-size: 1.25rem;
-  margin-bottom: 3rem;
+  font-size: 1.05rem;
+  margin-bottom: 2.2rem;
   opacity: 0.9;
   line-height: 1.7;
   color: var(--text-color);
@@ -216,7 +216,7 @@ onUnmounted(() => {
 .highlight {
   position: relative;
   display: inline-block;
-  color: var(--primary-color);
+  color: var(--primary-text);
 }
 
 /* Buttons */
@@ -230,18 +230,18 @@ onUnmounted(() => {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 2.2rem;
+  padding: 0.85rem 1.9rem;
   border-radius: 16px;
   text-decoration: none;
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   letter-spacing: 0.01em;
 }
 
 .btn-primary {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: #fff;
+  color: #01151c;
   box-shadow: 0 10px 20px -5px rgba(0, 210, 255, 0.4);
 }
 
@@ -382,10 +382,10 @@ onUnmounted(() => {
 /* Services & Cards */
 .section-title {
   text-align: center;
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: 4rem;
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  margin-bottom: 2.75rem;
   font-weight: 800;
-  background: linear-gradient(to right, var(--text-color), var(--primary-color));
+  background: linear-gradient(to right, var(--heading-color), var(--primary-text));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -421,8 +421,8 @@ onUnmounted(() => {
 }
 
 .card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
   font-weight: 700;
 }
 
@@ -462,12 +462,12 @@ onUnmounted(() => {
 
 .timeline .year {
   background: var(--primary-color);
-  color: white;
-  padding: 0.5rem 1.2rem;
+  color: #01151c;
+  padding: 0.45rem 1.1rem;
   border-radius: 12px;
   font-weight: 800;
-  font-size: 1rem;
-  min-width: 85px;
+  font-size: 0.9rem;
+  min-width: 80px;
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 210, 255, 0.3);
   z-index: 2;
@@ -487,8 +487,8 @@ onUnmounted(() => {
 }
 
 .facts-list li {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
+  margin-bottom: 0.9rem;
+  font-size: 1rem;
   padding-left: 1.5rem;
   position: relative;
 }
@@ -523,19 +523,19 @@ onUnmounted(() => {
   }
 
   .hero-text h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
   }
   
   .hero-text h2 {
-    font-size: 1.25rem;
-    min-height: 2rem;
+    font-size: 1.05rem;
+    min-height: 1.8rem;
     margin-bottom: 1rem;
   }
 
   .hero-text p {
-    font-size: 1rem;
-    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
     line-height: 1.5;
   }
 
@@ -545,14 +545,14 @@ onUnmounted(() => {
   }
 
   .btn {
-    padding: 0.8rem 1.5rem;
-    font-size: 0.9rem;
+    padding: 0.75rem 1.4rem;
+    font-size: 0.85rem;
     border-radius: 12px;
   }
 
   .section-title {
-    font-size: 1.75rem;
-    margin-bottom: 2.5rem;
+    font-size: 1.45rem;
+    margin-bottom: 2rem;
   }
 
   .card {

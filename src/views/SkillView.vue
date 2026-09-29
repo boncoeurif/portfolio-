@@ -80,19 +80,19 @@ const skillCategories = ref([
 
 .section-title {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 4rem;
-  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 2.25rem;
+  color: var(--primary-text);
 }
 
 .skills-category {
-  margin-bottom: 5rem;
+  margin-bottom: 3.5rem;
 }
 
 .category-title {
-  font-size: 1.8rem;
-  margin-bottom: 2.5rem;
-  color: var(--text-color);
+  font-size: 1.5rem;
+  margin-bottom: 1.75rem;
+  color: var(--heading-color);
   font-weight: 800;
   display: flex;
   align-items: center;
@@ -109,21 +109,21 @@ const skillCategories = ref([
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .skill-item {
   background: var(--glass-bg);
   backdrop-filter: blur(12px);
   border: 1px solid var(--glass-border);
-  padding: 2.5rem 1.5rem;
-  border-radius: 24px;
+  padding: 1.75rem 1.25rem;
+  border-radius: 20px;
   text-align: center;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
   box-shadow: var(--card-shadow);
 }
 
@@ -158,12 +158,12 @@ const skillCategories = ref([
 
 .skill-name {
   font-weight: 800;
-  font-size: 1.2rem;
-  color: var(--text-color);
+  font-size: 1.1rem;
+  color: var(--heading-color);
 }
 
 .skill-description {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   line-height: 1.5;
   opacity: 0.8;
   color: var(--text-color);
@@ -171,17 +171,17 @@ const skillCategories = ref([
 
 @media (max-width: 768px) {
   .section-title {
-    font-size: 1.75rem;
-    margin-bottom: 2.5rem;
+    font-size: 1.45rem;
+    margin-bottom: 1.75rem;
   }
 
   .skills-category {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
   }
 
   .category-title {
-    font-size: 1.25rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.25rem;
   }
 
   .skills-grid {

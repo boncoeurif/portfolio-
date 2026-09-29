@@ -105,33 +105,33 @@ const submitForm = () => {
 
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 2.25rem;
+    color: var(--primary-text);
 }
 
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
-    gap: 4rem;
+    gap: 3rem;
 }
 
 /* Info Styles */
 .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .info-item {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    padding: 2rem;
+    gap: 1.25rem;
+    padding: 1.5rem;
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
     border: 1px solid var(--glass-border);
-    border-radius: 24px;
+    border-radius: 20px;
     box-shadow: var(--card-shadow);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -159,10 +159,10 @@ const submitForm = () => {
 }
 
 .info-item h3 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.25rem;
+    margin: 0 0 0.35rem 0;
+    font-size: 1.1rem;
     font-weight: 800;
-    color: var(--primary-color);
+    color: var(--primary-text);
 }
 
 .info-item p {
@@ -175,12 +175,12 @@ const submitForm = () => {
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
-    padding: 3rem;
+    padding: 2.25rem;
     border: 1px solid var(--glass-border);
-    border-radius: 32px;
+    border-radius: 24px;
     box-shadow: var(--card-shadow);
 }
 
@@ -199,8 +199,8 @@ label {
 
 input,
 textarea {
-    padding: 1.2rem;
-    border-radius: 16px;
+    padding: 1rem;
+    border-radius: 14px;
     border: 1px solid var(--glass-border);
     background: rgba(255, 255, 255, 0.05);
     color: var(--text-color);
@@ -219,12 +219,12 @@ textarea:focus {
 
 .btn-submit {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
+    color: #01151c;
     border: none;
-    padding: 1.2rem;
-    border-radius: 16px;
+    padding: 1rem;
+    border-radius: 14px;
     font-weight: 800;
-    font-size: 1.1rem;
+    font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 10px 20px -5px rgba(0, 210, 255, 0.4);
@@ -244,7 +244,7 @@ textarea:focus {
     }
 
     .section-title {
-        font-size: 1.6rem;
+        font-size: 1.45rem;
         margin-bottom: 1.5rem;
     }
 

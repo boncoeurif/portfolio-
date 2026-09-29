@@ -3,6 +3,9 @@
     <!-- Matrix hacker background -->
     <MatrixRain />
 
+    <!-- Spider web cursor trail -->
+    <CursorWebTrail />
+
     <!-- Loading Splash Screen (first load only) -->
     <transition name="fade">
       <div v-if="isLoading" class="loading-overlay">
@@ -87,6 +90,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import Footer from '@/components/Footer.vue'
 import MatrixRain from '@/components/MatrixRain.vue'
+import CursorWebTrail from '@/components/CursorWebTrail.vue'
 
 const showButton = ref(false)
 const theme = ref(localStorage.getItem('theme') || 'dark')
@@ -127,6 +131,8 @@ onUnmounted(() => {
   --primary-color: #00d2ff;
   --secondary-color: #3a7bd5;
   --accent-hacker: #00ff9c;
+  --primary-text: #0090c2;
+  --heading-color: #0e2a35;
   --bg-color: #f4f7f6;
   --text-color: #2d3436;
   --nav-bg: rgba(255, 255, 255, 0.7);
@@ -144,6 +150,8 @@ onUnmounted(() => {
   --primary-color: #00d2ff;
   --secondary-color: #3a7bd5;
   --accent-hacker: #00ff9c;
+  --primary-text: #4fd8ff;
+  --heading-color: #eafff7;
   --bg-color: #010604;
   --text-color: #e6fff5;
   --nav-bg: rgba(1, 8, 5, 0.75);
@@ -351,10 +359,10 @@ body {
   }
 
   /* Global typography adjustments for mobile */
-  h1 { font-size: 1.75rem !important; }
-  h2 { font-size: 1.5rem !important; }
-  h3 { font-size: 1.25rem !important; }
-  p { font-size: 0.95rem !important; }
+  h1 { font-size: 1.5rem !important; }
+  h2 { font-size: 1.3rem !important; }
+  h3 { font-size: 1.1rem !important; }
+  p { font-size: 0.92rem !important; }
 
   .back-to-top {
     bottom: 5.5rem; /* Move up to avoid bottom nav */
@@ -406,7 +414,7 @@ body {
   bottom: 2rem;
   right: 2rem;
   background: var(--primary-color);
-  color: white;
+  color: #01151c;
   border: none;
   border-radius: 50%;
   width: 3rem;

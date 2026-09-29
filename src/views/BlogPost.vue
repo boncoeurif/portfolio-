@@ -35,10 +35,10 @@ const post = computed(() => blogPosts.find(p => p.id === route.params.id));
 
 .back-to-blog {
     display: inline-block;
-    margin-bottom: 1.5rem;
-    color: var(--primary-color);
+    margin-bottom: 1.25rem;
+    color: var(--primary-text);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     transition: color 0.2s ease;
 }
 
@@ -50,34 +50,34 @@ const post = computed(() => blogPosts.find(p => p.id === route.params.id));
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
     border: 1px solid var(--glass-border);
-    border-radius: 32px;
-    padding: 4rem;
+    border-radius: 24px;
+    padding: 2.5rem;
     box-shadow: var(--card-shadow);
 }
 
 .post-title {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    margin-bottom: 1rem;
-    color: var(--text-color);
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    margin-bottom: 0.75rem;
+    color: var(--heading-color);
     font-weight: 800;
-    line-height: 1.1;
+    line-height: 1.15;
 }
 
 .post-meta {
-    font-size: 1.1rem;
+    font-size: 0.97rem;
     font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: 3rem;
+    color: var(--primary-text);
+    margin-bottom: 2rem;
 }
 
 .post-body {
-    line-height: 1.8;
+    line-height: 1.75;
     color: var(--text-color);
-    font-size: 1.15rem;
+    font-size: 1.05rem;
 }
 
 .post-body p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
 }
 
 .post-not-found {
@@ -94,7 +94,7 @@ const post = computed(() => blogPosts.find(p => p.id === route.params.id));
 }
 
 .post-not-found h3 {
-    color: var(--primary-color);
+    color: var(--primary-text);
     margin-bottom: 1rem;
 }
 </style>

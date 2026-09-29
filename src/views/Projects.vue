@@ -139,9 +139,9 @@ const setActiveFilter = (filter) => {
 
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 2.25rem;
+    color: var(--primary-text);
 }
 
 /* Search Bar */
@@ -161,7 +161,7 @@ const setActiveFilter = (filter) => {
   backdrop-filter: blur(8px);
   color: var(--text-color);
   font-family: inherit;
-  font-size: 1.1rem;
+  font-size: 1rem;
   transition: all 0.3s ease;
   box-shadow: var(--card-shadow);
 }
@@ -203,7 +203,7 @@ const setActiveFilter = (filter) => {
 
 .filter-btn.active {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: white;
+  color: #01151c;
   border-color: transparent;
   box-shadow: 0 10px 20px -5px rgba(0, 210, 255, 0.4);
 }
@@ -260,16 +260,16 @@ const setActiveFilter = (filter) => {
 }
 
 .project-content h3 {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-  color: var(--primary-color);
+  font-size: 1.3rem;
+  margin-bottom: 0.85rem;
+  color: var(--primary-text);
   font-weight: 700;
 }
 
 .project-content p {
-  font-size: 1.05rem;
+  font-size: 0.97rem;
   line-height: 1.6;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
   opacity: 0.9;
   flex: 1;
 }
@@ -283,10 +283,10 @@ const setActiveFilter = (filter) => {
 
 .tag {
   background: rgba(0, 210, 255, 0.1);
-  color: var(--primary-color);
-  padding: 0.4rem 1rem;
+  color: var(--primary-text);
+  padding: 0.35rem 0.9rem;
   border-radius: 10px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 700;
   border: 1px solid rgba(0, 210, 255, 0.2);
 }
@@ -302,7 +302,7 @@ const setActiveFilter = (filter) => {
   text-decoration: none;
   color: var(--text-color);
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -310,14 +310,14 @@ const setActiveFilter = (filter) => {
 }
 
 .btn-link:hover {
-  color: var(--primary-color);
+  color: var(--primary-text);
   transform: translateX(5px);
 }
 
 @media (max-width: 768px) {
   .section-title {
-    font-size: 1.75rem;
-    margin-bottom: 2rem;
+    font-size: 1.45rem;
+    margin-bottom: 1.75rem;
   }
 
   .search-input {
@@ -355,12 +355,12 @@ const setActiveFilter = (filter) => {
   }
 
   .project-content h3 {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
   }
 
   .project-content p {
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
+    font-size: 0.88rem;
+    margin-bottom: 1.25rem;
   }
 
   .tags {

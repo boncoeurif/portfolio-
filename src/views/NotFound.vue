@@ -23,36 +23,36 @@
 }
 
 .error-code {
-    font-size: 8rem;
+    font-size: 6.5rem;
     font-weight: 800;
-    color: var(--primary-color);
+    color: var(--primary-text);
     margin: 0;
     line-height: 1;
     text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
 }
 
 .error-message {
-    font-size: 2rem;
-    margin: 1rem 0;
-    color: var(--text-color);
+    font-size: 1.6rem;
+    margin: 0.75rem 0;
+    color: var(--heading-color);
 }
 
 .description {
-    font-size: 1.1rem;
-    margin-bottom: 2.5rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
     color: var(--text-color);
     opacity: 0.8;
 }
 
 .btn-home {
     display: inline-block;
-    padding: 1rem 2.5rem;
+    padding: 0.85rem 2.1rem;
     background-color: var(--primary-color);
-    color: white;
+    color: #01151c;
     text-decoration: none;
     border-radius: 50px;
-    font-weight: 600;
-    font-size: 1.1rem;
+    font-weight: 700;
+    font-size: 1rem;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(66, 185, 131, 0.3);
 }

@@ -26,7 +26,7 @@ import instagram from '@/assets/inst.png'
   background: var(--glass-bg);
   backdrop-filter: blur(12px);
   border-top: 1px solid var(--glass-border);
-  padding: 4rem 0;
+  padding: 3rem 0;
   margin-top: auto;
 }
 
@@ -38,12 +38,12 @@ import instagram from '@/assets/inst.png'
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .footer-info h3 {
-  color: var(--primary-color);
-  font-size: 1.8rem;
+  color: var(--primary-text);
+  font-size: 1.5rem;
   font-weight: 800;
   margin: 0 0 0.5rem 0;
 }
@@ -68,8 +68,8 @@ import instagram from '@/assets/inst.png'
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 45px;
-  height: 45px;
+  width: 42px;
+  height: 42px;
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   border-radius: 12px;

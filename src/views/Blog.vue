@@ -32,9 +32,9 @@ import { blogPosts } from '@/data/blogPosts'
 
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 2.25rem;
+    color: var(--primary-text);
 }
 
 .blog-posts-grid {
@@ -71,18 +71,18 @@ import { blogPosts } from '@/data/blogPosts'
 }
 
 .blog-header h3 {
-    margin: 0 0 1rem 0;
-    color: var(--primary-color);
-    font-size: 1.75rem;
+    margin: 0 0 0.75rem 0;
+    color: var(--primary-text);
+    font-size: 1.4rem;
     font-weight: 800;
 }
 
 .blog-meta {
-    font-size: 0.95rem;
+    font-size: 0.88rem;
     font-weight: 600;
     color: var(--text-color);
     opacity: 0.7;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -90,14 +90,14 @@ import { blogPosts } from '@/data/blogPosts'
 
 .blog-excerpt {
     flex-grow: 1;
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
     line-height: 1.7;
-    font-size: 1.05rem;
+    font-size: 0.97rem;
     opacity: 0.9;
 }
 
 .read-more {
-    color: var(--primary-color);
+    color: var(--primary-text);
     font-weight: 800;
     align-self: flex-start;
     display: flex;
@@ -112,8 +112,8 @@ import { blogPosts } from '@/data/blogPosts'
 
 @media (max-width: 768px) {
     .section-title {
-        font-size: 1.75rem;
-        margin-bottom: 2rem;
+        font-size: 1.45rem;
+        margin-bottom: 1.75rem;
     }
 
     .blog-posts-grid {
@@ -125,23 +125,23 @@ import { blogPosts } from '@/data/blogPosts'
     }
 
     .blog-header h3 {
-        font-size: 1.35rem;
+        font-size: 1.2rem;
         margin-bottom: 0.5rem;
     }
 
     .blog-meta {
-        font-size: 0.85rem;
+        font-size: 0.82rem;
         margin-bottom: 1rem;
     }
 
     .blog-excerpt {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         line-height: 1.5;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.25rem;
     }
 
     .read-more {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 }
 </style>
