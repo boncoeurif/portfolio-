@@ -6,7 +6,7 @@
             <!-- Contact Info -->
             <div class="contact-info" data-aos="fade-right">
                 <div class="info-item">
-                    <span class="icone"><img :src="email" alt="Email Icon"></span>
+                    <span class="icon"><img :src="email" alt="Email Icon"></span>
                     <div>
                         <h3>Email</h3>
                         <p>irakozefabricebonceour@gmail.com</p>
@@ -107,7 +107,7 @@ const submitForm = () => {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: skyblue;
+    color: var(--primary-color);
 }
 
 .contact-content {

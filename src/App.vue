@@ -1,6 +1,9 @@
 <template>
   <div id="app" :class="theme">
-    <!-- Loading Splash Screen -->
+    <!-- Matrix hacker background -->
+    <MatrixRain />
+
+    <!-- Loading Splash Screen (first load only) -->
     <transition name="fade">
       <div v-if="isLoading" class="loading-overlay">
         <div class="logo-splash-container">
@@ -81,35 +84,13 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, watch } from 'vue'
-import { useRouter } from 'vue-router'
+import { ref, onMounted, onUnmounted } from 'vue'
 import Footer from '@/components/Footer.vue'
+import MatrixRain from '@/components/MatrixRain.vue'
 
 const showButton = ref(false)
-const theme = ref('dark') // default theme
-const isLoading = ref(false) // Start visible to prevent blank screens
-const router = useRouter()
-
-// Show loading only during navigation
-router.beforeEach((to, from, next) => {
-  isLoading.value = true
-  next()
-})
-
-router.afterEach(() => {
-  setTimeout(() => {
-    isLoading.value = false
-  }, 800)
-})
-
-// Prevent scroll jumping when loading
-watch(isLoading, (val) => {
-  if (val && typeof document !== 'undefined') {
-    document.body.style.overflow = 'hidden'
-  } else if (typeof document !== 'undefined') {
-    document.body.style.overflow = ''
-  }
-})
+const theme = ref(localStorage.getItem('theme') || 'dark')
+const isLoading = ref(true) // Splash on first load only
 
 const handleScroll = () => {
   showButton.value = window.scrollY > 200
@@ -126,12 +107,12 @@ const toggleTheme = () => {
 }
 
 onMounted(() => {
-  // Load saved theme if available
-  const savedTheme = localStorage.getItem('theme')
-  if (savedTheme) {
-    theme.value = savedTheme
-  }
   document.documentElement.setAttribute('data-theme', theme.value)
+
+  // Hide first-load splash
+  setTimeout(() => {
+    isLoading.value = false
+  }, 1100)
 
   window.addEventListener('scroll', handleScroll)
 })
@@ -145,25 +126,36 @@ onUnmounted(() => {
 :root {
   --primary-color: #00d2ff;
   --secondary-color: #3a7bd5;
-  --bg-color: #f8f9fa;
+  --accent-hacker: #00ff9c;
+  --bg-color: #f4f7f6;
   --text-color: #2d3436;
   --nav-bg: rgba(255, 255, 255, 0.7);
   --nav-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   --glass-bg: rgba(255, 255, 255, 0.4);
   --glass-border: rgba(255, 255, 255, 0.3);
   --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  --app-bg:
+    radial-gradient(circle at 50% -20%, rgba(0, 210, 255, 0.12) 0%, transparent 30%),
+    radial-gradient(circle at 0% 50%, rgba(58, 123, 213, 0.08) 0%, transparent 25%),
+    #f4f7f6;
 }
 
 [data-theme="dark"] {
   --primary-color: #00d2ff;
   --secondary-color: #3a7bd5;
-  --bg-color: #0f172a;
-  --text-color: #f1f5f9;
-  --nav-bg: rgba(15, 23, 42, 0.7);
-  --nav-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-  --glass-bg: rgba(30, 41, 59, 0.4);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  --accent-hacker: #00ff9c;
+  --bg-color: #010604;
+  --text-color: #e6fff5;
+  --nav-bg: rgba(1, 8, 5, 0.75);
+  --nav-shadow: 0 4px 30px rgba(0, 255, 156, 0.08);
+  --glass-bg: rgba(4, 22, 15, 0.5);
+  --glass-border: rgba(0, 255, 156, 0.16);
+  --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.55);
+  --app-bg:
+    radial-gradient(circle at 50% -20%, rgba(0, 210, 255, 0.16) 0%, transparent 32%),
+    radial-gradient(circle at 100% 40%, rgba(0, 255, 156, 0.1) 0%, transparent 30%),
+    radial-gradient(circle at 0% 80%, rgba(0, 255, 156, 0.07) 0%, transparent 28%),
+    #010604;
 }
 
 html {
@@ -183,9 +175,20 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: radial-gradient(circle at 50% -20%, var(--primary-color) 0%, transparent 25%),
-              radial-gradient(circle at 0% 50%, var(--secondary-color) 0%, transparent 20%);
+  position: relative;
+  background: var(--app-bg);
   background-attachment: fixed;
+}
+
+/* Content layers sit above the matrix canvas */
+.main-content {
+  position: relative;
+  z-index: 1;
+}
+
+.footer {
+  position: relative;
+  z-index: 1;
 }
 
 /* Glassmorphism Utility */

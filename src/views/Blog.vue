@@ -18,34 +18,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-
-const blogPosts = ref([
-    {
-        id: 'first-post',
-        title: 'Getting Started with Vue 3 and Vite',
-        author: 'John Doe',
-        date: 'January 15, 2024',
-        excerpt: 'A comprehensive guide to setting up your first Vue 3 project using Vite for blazing fast development experience...',
-        content: 'Content for the first blog post goes here...'
-    },
-    {
-        id: 'understanding-composition-api',
-        title: 'Understanding Vue 3 Composition API',
-        author: 'Jane Smith',
-        date: 'February 1, 2024',
-        excerpt: 'Dive deep into the Composition API, exploring its benefits and how it changes component organization...',
-        content: 'Content for the second blog post goes here...'
-    },
-    {
-        id: 'css-tips-for-responsive-design',
-        title: 'CSS Tips for Responsive Design',
-        author: 'Alice Johnson',
-        date: 'March 10, 2024',
-        excerpt: 'Learn effective CSS techniques to make your web applications look great on any device...',
-        content: 'Content for the third blog post goes here...'
-    }
-]);
+import { blogPosts } from '@/data/blogPosts'
 </script>
 
 <style scoped>
@@ -61,7 +34,7 @@ const blogPosts = ref([
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: skyblue;
+    color: var(--primary-color);
 }
 
 .blog-posts-grid {

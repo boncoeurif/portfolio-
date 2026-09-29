@@ -82,7 +82,7 @@ const skillCategories = ref([
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 4rem;
-  color: skyblue;
+  color: var(--primary-color);
 }
 
 .skills-category {

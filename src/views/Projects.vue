@@ -37,9 +37,9 @@
                     <div class="tags">
                         <span v-for="tag in project.tags" :key="tag" class="tag">{{ tag }}</span>
                     </div>
-                    <div class="links">
-                        <a :href="project.demo" target="_blank" class="btn-link">Live Demo</a>
-                        <a :href="project.github" target="_blank" class="btn-link">GitHub</a>
+                    <div class="links" v-if="project.demo !== '#' || project.github !== '#'">
+                        <a v-if="project.demo !== '#'" :href="project.demo" target="_blank" rel="noopener" class="btn-link">Live Demo</a>
+                        <a v-if="project.github !== '#'" :href="project.github" target="_blank" rel="noopener" class="btn-link">GitHub</a>
                     </div>
                 </div>
             </div>
@@ -141,7 +141,7 @@ const setActiveFilter = (filter) => {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: skyblue;
+    color: var(--primary-color);
 }
 
 /* Search Bar */

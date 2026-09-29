@@ -13,7 +13,6 @@
         <div class="cta-group animate-fade-up delay-3">
           <router-link to="/projects" class="btn btn-primary">View My Work</router-link>
           <router-link to="/contact" class="btn btn-secondary">Contact Me</router-link>
-          <a href="/resume.pdf" download class="btn btn-secondary">Download Resume</a>
         </div>
       </div>
       <div class="hero-visual animate-fade-in">
@@ -33,9 +32,6 @@
             <img :src="nodeIcon" alt="Node.js" loading="lazy" decoding="async">
           </div>
         </div>
-      </div>
-      <div class="scroll-down" @click="scrollToServices">
-        <span class="arrow-down">↓</span>
       </div>
     </section>
 
@@ -89,7 +85,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import bon from '@/assets/boncoeur.png'
 import vueIcon from '@/assets/vue.png'
 import jsIcon from '@/assets/js.png'
@@ -119,17 +115,11 @@ const timeline = ref([
 ])
 
 const typingText = ref('')
-const roles = ['Full Stack Developer', 'UI/UX Designer', 'Problem Solver','Windows Server configuration','Logo Creator']
+const roles = ['Full Stack Developer', 'UI/UX Designer', 'Problem Solver', 'Windows Server configuration', 'Logo Creator']
 let roleIndex = 0
 let charIndex = 0
 let isDeleting = false
-
-const scrollToServices = () => {
-  const servicesSection = document.querySelector('.services')
-  if (servicesSection) {
-    servicesSection.scrollIntoView({ behavior: 'smooth' })
-  }
-}
+let typeTimer = null
 
 const typeEffect = () => {
   const currentRole = roles[roleIndex]
@@ -161,7 +151,11 @@ const typeEffect = () => {
 }
 
 onMounted(() => {
-  setTimeout(typeEffect, 1000)
+  typeTimer = setTimeout(typeEffect, 1000)
+})
+
+onUnmounted(() => {
+  clearTimeout(typeTimer)
 })
 </script>
 

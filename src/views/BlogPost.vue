@@ -6,8 +6,7 @@
             <h2 class="post-title">{{ post.title }}</h2>
             <p class="post-meta">{{ post.author }} | {{ post.date }}</p>
             <div class="post-body">
-                <p>{{ post.content }}</p>
-                <!-- In a real application, you might use markdown-it or another library to render dynamic content -->
+                <p v-for="(paragraph, index) in post.content" :key="index">{{ paragraph }}</p>
             </div>
         </div>
         <div v-else class="post-not-found" data-aos="fade-up">
@@ -18,44 +17,12 @@
 </template>
 
 <script setup>
-import { ref, watchEffect } from 'vue';
+import { computed } from 'vue';
 import { useRoute } from 'vue-router';
-
-// Re-defining blogPosts here for simplicity. In a larger app, this might come from a store or API.
-const allBlogPosts = ref([
-    {
-        id: 'first-post',
-        title: 'Getting Started with Vue 3 and Vite',
-        author: 'John Doe',
-        date: 'January 15, 2024',
-        excerpt: 'A comprehensive guide to setting up your first Vue 3 project using Vite for blazing fast development experience...',
-        content: 'This is the full content for the first blog post. It explains how to set up a new Vue 3 project with Vite, detailing the commands, project structure, and initial configuration. It covers topics like component creation, basic routing, and styling with CSS preprocessors. The goal is to get developers up and running quickly with a modern Vue development environment.'
-    },
-    {
-        id: 'understanding-composition-api',
-        title: 'Understanding Vue 3 Composition API',
-        author: 'Jane Smith',
-        date: 'February 1, 2024',
-        excerpt: 'Dive deep into the Composition API, exploring its benefits and how it changes component organization...',
-        content: 'Here is the detailed explanation of the Vue 3 Composition API. It contrasts the Composition API with the Options API, highlighting benefits like better code organization, reusability, and type inference. Examples include `ref`, `reactive`, `computed`, `watch`, and lifecycle hooks. It also shows how to extract reusable logic into composables.'
-    },
-    {
-        id: 'css-tips-for-responsive-design',
-        title: 'CSS Tips for Responsive Design',
-        author: 'Alice Johnson',
-        date: 'March 10, 2024',
-        excerpt: 'Learn effective CSS techniques to make your web applications look great on any device...',
-        content: 'This post provides practical CSS tips for achieving responsive design. It covers media queries, flexible box layout (flexbox), grid layout, `viewport` units, and image optimization for different screen sizes. It emphasizes a mobile-first approach and best practices for creating adaptable user interfaces across various devices.'
-    }
-]);
+import { blogPosts } from '@/data/blogPosts';
 
 const route = useRoute();
-const post = ref(null);
-
-watchEffect(() => {
-    const postId = route.params.id;
-    post.value = allBlogPosts.value.find(p => p.id === postId);
-});
+const post = computed(() => blogPosts.find(p => p.id === route.params.id));
 </script>
 
 <style scoped>

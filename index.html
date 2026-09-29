@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="/favicon.png">
@@ -8,9 +8,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <meta name="description" content="I.Fabrice Boncoeur - Full Stack Developer Portfolio. Building performant and accessible web experiences.">
     <meta name="author" content="I.Fabrice Boncoeur">
+    <meta name="theme-color" content="#010604">
     <title>I.Fabrice Boncoeur | Portfolio</title>
+    <script>
+      // Apply saved theme before first paint to avoid a flash of the wrong theme
+      document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark')
+    </script>
   </head>
   <body>
     <div id="app"></div>

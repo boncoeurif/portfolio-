@@ -8,11 +8,8 @@
       </div>
       
       <div class="footer-links">
-        <a href="https://github.com/boncoeurif" class="social-link"><img :src="github" alt="githubicon" class="icon"></a>
-        <a href="https://www.instagram.com/___boncoeur____/#" class="social-link"><img :src="instagram" alt="instagramicone" class="icon"></a>
-        <a href="#" class="social-link"><img :src="facebook" alt="facebookicone" class="icon"></a>
-        <a href="#" class="social-link"><img :src="twitter" alt="twittericone" class="icon"></a>
-        
+        <a href="https://github.com/boncoeurif" target="_blank" rel="noopener" class="social-link" aria-label="GitHub"><img :src="github" alt="GitHub" class="icon"></a>
+        <a href="https://www.instagram.com/___boncoeur____/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><img :src="instagram" alt="Instagram" class="icon"></a>
       </div>
     </div>
   </footer>
@@ -21,8 +18,6 @@
 
 import github from '@/assets/github.png'
 import instagram from '@/assets/inst.png'
-import twitter from '@/assets/twitter.png'
-import facebook from '@/assets/facebook.png'
 
   </script>
 <style scoped>
